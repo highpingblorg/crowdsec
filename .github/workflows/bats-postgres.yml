@@ -23,13 +23,13 @@ jobs:
 
     steps:
 
-    - name: "Install pg_dump v16"
+    - name: "Install pg_dump v17"
       # we can remove this when it's released on ubuntu-latest
       run: |
           sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
           wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
           sudo apt update
-          sudo apt -qq -y -o=Dpkg::Use-Pty=0 install postgresql-client-16
+          sudo apt -qq -y -o=Dpkg::Use-Pty=0 install postgresql-client-17
 
     - name: "Force machineid"
       run: |
